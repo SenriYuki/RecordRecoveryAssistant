@@ -1,0 +1,127 @@
+/* Window Mask / 遮罩 */
+.recovery-mask { 
+    position: fixed !important; top: 0; left: 0; width: 100vw; height: 100vh; 
+    background: rgba(0, 0, 0, 0.85) !important; z-index: 99999 !important;
+    display: flex; justify-content: center; align-items: center; 
+    backdrop-filter: blur(5px);
+}
+
+/* Main Window / 主窗口 */
+.recovery-win { 
+    position: relative !important; width: 92vw !important; height: 90vh !important; 
+    background: #1a1a1a !important; border: 1px solid #444 !important; 
+    border-radius: 12px; display: flex !important; flex-direction: column !important; 
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6); overflow: hidden;
+}
+
+/* Header / 标题栏 */
+.rec-head { 
+    padding: 10px 15px !important; 
+    background: #222; border-bottom: 1px solid #333; 
+    display: flex !important; justify-content: space-between !important; 
+    align-items: flex-start !important; flex-shrink: 0; height: 45px; box-sizing: border-box;
+}
+.rec-head h3 { margin: 0; font-size: 1rem; padding-top: 3px; }
+.rec-close { 
+    font-size: 24px !important; line-height: 1 !important; margin-top: -4px !important;
+    padding: 5px !important; cursor: pointer; opacity: 0.6;
+}
+
+/* Control Grid / 控制区布局 */
+.rec-controls { 
+    display: grid !important; 
+    grid-template-columns: 1fr 1fr !important; 
+    grid-template-rows: auto auto auto !important;
+    gap: 8px !important; padding: 10px !important;
+    background: #1e1e1e !important; border-bottom: 2px solid #333; flex-shrink: 0;
+}
+
+/* Row 1: Time Inputs / 时间选择 */
+.control-group { grid-row: 1; grid-column: auto; display: flex !important; flex-direction: column !important; gap: 2px; }
+.control-group label { font-size: 11px !important; color: #888; }
+.rec-input { 
+    width: 100% !important; height: 32px !important; background: #111 !important; 
+    color: #fff !important; border: 1px solid #444 !important; border-radius: 4px; 
+    font-size: 12px !important; text-align: center;
+}
+
+/* Row 2: Checkbox (Moved above search) / 勾选框移到第二行 */
+.filter-checkbox { 
+    grid-row: 2 !important; grid-column: 1 / -1 !important;
+    display: flex !important; align-items: center !important; 
+    gap: 6px; font-size: 12px !important; color: #ccc;
+    margin: 2px 0 !important; padding: 0 !important;
+}
+.filter-checkbox input { width: 16px; height: 16px; margin: 0; }
+
+/* Row 3: Search Button / 搜索按钮在最下方 */
+.rec-controls .menu_button { 
+    grid-row: 3 !important; grid-column: 1 / -1 !important;
+    width: 100% !important; height: 38px !important; margin: 0 !important;
+    background: #6fa8dc !important; color: white !important;
+    display: flex !important; align-items: center; justify-content: center; gap: 5px;
+    border-radius: 6px; font-weight: bold; font-size: 0.9rem !important;
+    white-space: nowrap !important;
+}
+
+/* Content Body / 内容容器 (关键：禁止Flex乱动) */
+.rec-body { 
+    flex: 1 !important; 
+    display: flex !important; 
+    flex-direction: column !important; 
+    overflow: hidden !important; 
+    height: 100% !important;
+}
+
+/* List Area / 列表区 (强制固定高度) */
+.rec-list { 
+    height: 35% !important;
+    min-height: 35% !important; 
+    flex: none !important;
+    overflow-y: auto !important; 
+    background: rgba(0,0,0,0.2); 
+    border-bottom: 2px solid #444; 
+}
+
+/* Preview Area / 预览区 (强制固定高度) */
+.rec-preview { 
+    flex: 1 !important;
+    min-height: 0 !important;
+    padding: 10px; 
+    display: flex; 
+    flex-direction: column; 
+    background: #1a1a1a; 
+    overflow: hidden !important;
+}
+
+/* Preview Box / 预览框内部 */
+.preview-box { 
+    width: 100% !important;
+    height: 100% !important;
+    background: #111; 
+    border: 1px solid #333; 
+    border-radius: 6px; 
+    padding: 8px; 
+    font-size: 12px; 
+    overflow-y: auto !important;
+    color: #ccc; 
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+/* Footer / 底部固定 */
+.rec-foot { 
+    padding: 10px !important; flex-shrink: 0; background: #1a1a1a; border-top: 1px solid #333;
+    display: flex; flex-direction: column; align-items: center; gap: 5px;
+}
+#rec-btn { 
+    width: 100% !important; padding: 12px; background: #444; color: #888;
+    border-radius: 8px; border: none; font-weight: bold; font-size: 1rem;
+}
+#rec-btn:not(:disabled) { background: linear-gradient(135deg, #ff6b6b, #ff8e53); color: white; }
+
+/* Credits / 签名档 */
+.rec-credits {
+    font-size: 10px !important; color: #555 !important; text-align: center !important;
+    opacity: 0.8; display: block !important; width: 100%; margin-top: 3px;
+}

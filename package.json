@@ -1,0 +1,8 @@
+{
+  "name": "record-recovery-assistant",
+  "version": "1.0.0",
+  "description": "Recover chat backups based on time ranges / 基于时间范围恢复聊天备份",
+  "main": "index.js",
+  "author": "SenriYuki",
+  "license": "MIT"
+}

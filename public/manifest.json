@@ -1,0 +1,8 @@
+{
+    "display_name": "Record Recovery Assistant (记录找回助手)",
+    "author": "SenriYuki",
+    "version": "1.0.0",
+    "js": "index.js",
+    "css": "style.css",
+    "type": "global"
+}
