@@ -124,7 +124,7 @@ If you are using Termux on Android, editing files can be tricky. Please follow t
 **只需一步！复制下面的整段指令，在 Termux 中长按粘贴并回车：**
 
 ```bash
-cd ~/SillyTavern/plugins && git clone [https://github.com/SenriYuki/RecordRecoveryAssistant.git](https://github.com/SenriYuki/RecordRecoveryAssistant.git) && cd RecordRecoveryAssistant && npm install && echo "Plugin Installed! Please Restart ST. (安装完成，请重启酒馆)"
+cd ~/SillyTavern/plugins && git clone https://github.com/SenriYuki/RecordRecoveryAssistant.git && cd RecordRecoveryAssistant && npm install && echo "Plugin Installed! Please Restart ST. (安装完成，请重启酒馆)"
 ```
 
 
@@ -133,7 +133,7 @@ cd ~/SillyTavern/plugins && git clone [https://github.com/SenriYuki/RecordRecove
 
 ```bash
 cd plugins
-git clone [https://github.com/SenriYuki/RecordRecoveryAssistant.git](https://github.com/SenriYuki/RecordRecoveryAssistant.git)
+git clone https://github.com/SenriYuki/RecordRecoveryAssistant.git
 cd RecordRecoveryAssistant
 npm install
 ```
@@ -149,6 +149,7 @@ npm install
 ### Q: The preview is empty? (预览是空的？)
   A: The file might be corrupted, or empty to begin with. The preview currently supports up to 100KB of text to ensure performance.
   (可能是文件已损坏或是本来就是空的。为了确保性能，预览功能目前支持最大 100KB 的文本。)
+
 
 
 
