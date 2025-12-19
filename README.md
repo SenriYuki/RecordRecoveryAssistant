@@ -58,45 +58,24 @@ You must enable specific settings in `config.yaml` for the plugin to function.
 
 ### 📱 Android (Termux Users) - 手机端保姆级教程
 
-If you are using Termux on Android, editing files can be tricky. Please follow these steps **exactly**:  
-如果你是安卓 Termux 用户，请**严格按照以下步骤**操作，不要跳过任何一步：
+**Automated Setup (Recommended)**: No need to edit files manually! Just copy and paste the code block below.  
+**自动配置（强烈推荐）**：不需要手动编辑文件！直接复制下方代码块并在 Termux 中运行即可。它会自动修改设置，防止手滑出错。
 
 1.  **Stop SillyTavern** (停止酒馆运行):
     Press `Ctrl + C` in Termux to stop the server. (在 Termux 中按 `Ctrl + C` 停止酒馆)
 
-2.  **Enter Directory** (进入酒馆目录):
+2.  **Run Configuration Command** (运行配置指令):
+    **Copy the following lines and paste them into Termux (Long press -> Paste):**
+    **复制下面这几行代码，在 Termux 中长按粘贴并回车：**
+
     ```bash
     cd ~/SillyTavern
+    sed -i 's/enableServerPlugins:.*/enableServerPlugins: true/' config.yaml
+    sed -i 's/disableCsrfProtection:.*/disableCsrfProtection: true/' config.yaml
+    echo "Config Updated! (配置已自动修改完成！)"
     ```
 
-3.  **Open Config File** (打开配置文件):
-    We will use the `nano` editor. (我们将使用 nano 编辑器)
-    ```bash
-    nano config.yaml
-    ```
-
-4.  **Step A: Enable Plugins** (步骤 A：开启插件权限):
-    * Press `Ctrl + W` (Search function / 搜索功能).
-    * Type `enableServerPlugins` and press `Enter` (输入这个词并回车).
-    * Change `false` to `true` (将 false 改为 true):
-        ```yaml
-        enableServerPlugins: true
-        ```
-
-5.  **Step B: Disable CSRF** (步骤 B：关闭 CSRF 保护):
-    * Press `Ctrl + W` again.
-    * Type `disableCsrfProtection` and press `Enter`.
-    * Change `false` to `true` (将 false 改为 true):
-        ```yaml
-        disableCsrfProtection: true
-        ```
-
-6.  **Save and Exit** (保存并退出):
-    * Press `Ctrl + O` (Save / 保存).
-    * Press `Enter` (Confirm filename / 确认文件名).
-    * Press `Ctrl + X` (Exit editor / 退出编辑器).
-
-7.  **Restart SillyTavern** (重启酒馆):
+3.  **Restart SillyTavern** (重启酒馆):
     Run `./start.sh` to apply changes. (输入 `./start.sh` 重启)
 
 ---
@@ -149,6 +128,7 @@ npm install
 ### Q: The preview is empty? (预览是空的？)
   A: The file might be corrupted, or empty to begin with. The preview currently supports up to 100KB of text to ensure performance.
   (可能是文件已损坏或是本来就是空的。为了确保性能，预览功能目前支持最大 100KB 的文本。)
+
 
 
 
